@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keyword Research</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <div>
+          <p class="page-header__eyebrow">Keyword Research</p>
+          <h1>Relevância de palavras-chave</h1>
+        </div>
+        <a class="guide-link" href="columns_guide.md">Entenda as colunas</a>
+      </header>
+
+      <section class="controls" aria-label="Controles da tabela">
+        <div class="control-group control-group--search">
+          <label for="search-input">Pesquisa</label>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Pesquisar por palavra-chave, fonte, competição ou qualquer atributo..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="control-group">
+          <label for="sort-column">Coluna</label>
+          <select id="sort-column"></select>
+        </div>
+
+        <div class="control-group">
+          <label for="sort-direction">Direção</label>
+          <select id="sort-direction">
+            <option value="asc">A-Z / menor-maior</option>
+            <option value="desc">Z-A / maior-menor</option>
+          </select>
+        </div>
+
+        <div class="button-group" aria-label="Ordenação geral">
+          <button id="sort-az" type="button">A-Z</button>
+          <button id="sort-za" type="button">Z-A</button>
+          <button id="clear-filters" type="button">Limpar</button>
+        </div>
+      </section>
+
+      <section class="time-window" aria-label="Filtro de janela temporal">
+        <span class="time-window__label">Período:</span>
+        <div class="time-window__buttons" role="group" aria-label="Janela temporal">
+          <button class="time-window__btn" data-window="7d" type="button">7 dias</button>
+          <button class="time-window__btn" data-window="30d" type="button">30 dias</button>
+          <button class="time-window__btn" data-window="90d" type="button">90 dias</button>
+          <button class="time-window__btn is-active" data-window="1y" type="button">1 ano</button>
+        </div>
+      </section>
+
+      <section id="status" class="status" role="status" aria-live="polite"></section>
+
+      <section id="chart-panel" class="chart-panel" hidden aria-label="Gráfico de tendência">
+        <div class="chart-panel__header">
+          <h2 id="chart-title" class="chart-panel__title"></h2>
+          <button id="chart-close" class="chart-panel__close" type="button" aria-label="Fechar gráfico">✕</button>
+        </div>
+        <div id="chart-content" class="chart-panel__content"></div>
+      </section>
+
+      <section class="table-frame" aria-label="Tabela de palavras-chave">
+        <table id="keywords-table"></table>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

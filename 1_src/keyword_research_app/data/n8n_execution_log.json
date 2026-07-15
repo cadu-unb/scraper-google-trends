@@ -1,0 +1,36 @@
+{
+  "runs": [
+    {
+      "executed_at": "2026-07-14T19:00:33.891063+00:00",
+      "status": "success",
+      "note": "Loop keyword research executado pelo n8n",
+      "source": "GOOGLE_TRENDS",
+      "report_generated_at": "2026-07-14T18:55:19",
+      "total_keywords": 103,
+      "report_path": "/workspace/1_src/keyword_research_app/data/keyword_trends_report.json",
+      "workflow_execution_id": null
+    },
+    {
+      "executed_at": "2026-07-15T18:39:24.593091+00:00",
+      "status": "success",
+      "note": "Loop keyword research executado pelo n8n",
+      "source": "GOOGLE_TRENDS",
+      "report_generated_at": "2026-07-15T18:39:24",
+      "total_keywords": 103,
+      "report_path": "/workspace/1_src/keyword_research_app/data/keyword_trends_report.json",
+      "workflow_execution_id": null
+    },
+    {
+      "executed_at": "2026-07-15T18:41:03.465930+00:00",
+      "status": "success",
+      "note": "Loop keyword research executado pelo n8n",
+      "source": "GOOGLE_TRENDS",
+      "report_generated_at": "2026-07-15T18:41:03",
+      "total_keywords": 103,
+      "report_path": "/workspace/1_src/keyword_research_app/data/keyword_trends_report.json",
+      "workflow_execution_id": null
+    }
+  ],
+  "total_runs": 3,
+  "updated_at": "2026-07-15T18:41:03.465930+00:00"
+}

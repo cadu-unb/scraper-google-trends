@@ -1,0 +1,26 @@
+services:
+  n8n:
+    build:
+      context: ../..
+      dockerfile: 3_n8n/RunV2/dockerfile-n8n-python
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=admin
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - N8N_SECURE_COOKIE=false
+      - NODES_EXCLUDE="[n8n-nodes-base.localFileTrigger]"
+      - PYTHONDONTWRITEBYTECODE=1
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./scripts:/scripts  # (opcional) montar scripts locais
+      - ../../1_src:/workspace/1_src
+    restart: unless-stopped
+
+volumes:
+  n8n_data:
