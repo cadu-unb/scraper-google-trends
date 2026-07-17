@@ -29,8 +29,18 @@
       "total_keywords": 103,
       "report_path": "/workspace/1_src/keyword_research_app/data/keyword_trends_report.json",
       "workflow_execution_id": null
+    },
+    {
+      "executed_at": "2026-07-17T18:10:50.615388+00:00",
+      "status": "success",
+      "note": "Loop keyword research executado pelo n8n",
+      "source": "GOOGLE_TRENDS",
+      "report_generated_at": "2026-07-17T18:10:50",
+      "total_keywords": 103,
+      "report_path": "/workspace/1_src/keyword_research_app/data/keyword_trends_report.json",
+      "workflow_execution_id": null
     }
   ],
-  "total_runs": 3,
-  "updated_at": "2026-07-15T18:41:03.465930+00:00"
+  "total_runs": 4,
+  "updated_at": "2026-07-17T18:10:50.615388+00:00"
 }
