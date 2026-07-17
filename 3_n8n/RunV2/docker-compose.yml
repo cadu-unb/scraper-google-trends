@@ -3,6 +3,7 @@ services:
     build:
       context: ../..
       dockerfile: 3_n8n/RunV2/dockerfile-n8n-python
+    user: "1001:1001"
     ports:
       - "5678:5678"
     environment:
@@ -13,6 +14,8 @@ services:
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
       - NODE_ENV=production
+      - HOME=/home/node
+      - N8N_USER_FOLDER=/home/node/.n8n
       - N8N_SECURE_COOKIE=false
       - NODES_EXCLUDE="[n8n-nodes-base.localFileTrigger]"
       - PYTHONDONTWRITEBYTECODE=1

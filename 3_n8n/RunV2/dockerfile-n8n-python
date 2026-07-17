@@ -12,16 +12,14 @@ COPY --from=python-base /usr/local/ /usr/local/
 # Copia a biblioteca nativa exigida pelo modulo `_ctypes` usado por pandas/pytrends
 COPY --from=python-base /usr/lib/libffi.so.8* /usr/lib/
 
-# Troca de volta para o usuário padrão do n8n
-USER node
-
-# Instala o pipx de forma limpa usando o Python copiado
-RUN python3 -m pip install --user --break-system-packages pipx
+# Instala o pipx em caminho global para funcionar com qualquer UID definido no compose
+RUN python3 -m pip install --break-system-packages pipx
 
 # Instala as dependencias usadas pelos scripts Python chamados pelo n8n
 COPY 1_src/keyword_research_app/requirements.txt /tmp/keyword-research-requirements.txt
-RUN python3 -m pip install --user --break-system-packages \
+RUN python3 -m pip install --break-system-packages \
     -r /tmp/keyword-research-requirements.txt
 
-# Garante o path do pipx configurado no sistema
-ENV PATH="/home/node/.local/bin:$PATH"
+# Troca de volta para um usuário não-root; o compose define o UID/GID real.
+USER node
+
